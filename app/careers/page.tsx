@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Rocket, Globe2, Users2, Sparkles, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -34,6 +35,20 @@ export default function CareersPage() {
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
             Pecan Energies is an entrepreneurial, mission-driven organisation. We're building something historic — and we want exceptional people to join us.
           </p>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <section className="bg-[#0A0F1E]">
+        <div className="max-w-7xl mx-auto px-6 pt-16">
+          <div className="grid grid-cols-2 gap-2 h-64">
+            {["Join-our-team-2.jpg","Join-our-team-3.jpg"].map((img, i) => (
+              <div key={i} className="relative overflow-hidden">
+                <Image src={`/images/${img}`} alt="Pecan Energies team" fill className="object-cover" />
+                <div className="absolute inset-0 bg-[#0A0F1E]/25" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

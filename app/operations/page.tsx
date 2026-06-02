@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Waves, Anchor, Map, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -54,6 +55,20 @@ export default function OperationsPage() {
       </section>
 
       {/* Pecan field */}
+      {/* Operations photo strip */}
+      <section className="bg-[#0A0F1E]">
+        <div className="max-w-7xl mx-auto px-6 pt-16">
+          <div className="grid grid-cols-3 gap-2 h-56">
+            {["what-we-do-2.jpg","what-we-do-3.jpg","what-we-do-4.jpg"].map((img, i) => (
+              <div key={i} className="relative overflow-hidden">
+                <Image src={`/images/${img}`} alt="Pecan Energies operations" fill className="object-cover" />
+                <div className="absolute inset-0 bg-[#0A0F1E]/30" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-[#0A0F1E]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -32,18 +33,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#A07830] flex items-center justify-center text-[#0A0F1E] font-bold text-lg">
-            P
-          </div>
-          <div>
-            <div className="text-white font-bold text-lg leading-tight tracking-wide">
-              PECAN
-            </div>
-            <div className="text-[#C9A84C] text-xs tracking-[0.2em] uppercase">
-              Energies
-            </div>
-          </div>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo-alt.svg"
+            alt="Pecan Energies"
+            width={160}
+            height={40}
+            className="h-10 w-auto brightness-0 invert"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

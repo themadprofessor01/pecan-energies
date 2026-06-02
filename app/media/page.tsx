@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FileText, Image as ImageIcon, Video, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -7,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const news = [
-  { date: "January 2026", title: "New Group CEO Appointed", desc: "Pecan Energies announces the appointment of a new Group Chief Executive Officer, marking a new chapter in the company's leadership." },
-  { date: "October 2025", title: "Breast Cancer Awareness Month", desc: "Pecan Energies recognises Breast Cancer Awareness Month with community health initiatives across our operational areas in Ghana." },
-  { date: "2025", title: "PISP 2025 Graduation", desc: "Inaugural graduation and inauguration of the Pecan Industry Scholarship Programme (PISP) 2025 cohort, celebrating Ghanaian energy talent." },
-  { date: "2024", title: "2024 Sustainability Report Published", desc: "Our annual Sustainability Report details our environmental, social and governance performance and commitments for the future." },
-  { date: "July 2023", title: "Plan of Development Approved", desc: "The Government of Ghana approves Pecan Energies' Plan of Development for the DWT/CTP block — a landmark milestone for the Pecan field." },
+  { date: "January 2026", title: "New Group CEO Appointed", desc: "Pecan Energies announces the appointment of a new Group Chief Executive Officer, marking a new chapter in the company's leadership.", img: "/images/565094.jpg" },
+  { date: "October 2025", title: "Breast Cancer Awareness Month", desc: "Pecan Energies recognises Breast Cancer Awareness Month with community health initiatives across our operational areas in Ghana.", img: "/images/Breast-Cancer-Awareness-Month.png" },
+  { date: "2025", title: "PISP 2025 Graduation", desc: "Inaugural graduation and inauguration of the Pecan Industry Scholarship Programme (PISP) 2025 cohort, celebrating Ghanaian energy talent.", img: "/images/thumbnail_PISP-INAUGURATION-GRAGUATION-THUMBNAIL.jpg" },
+  { date: "2024", title: "2024 Sustainability Report Published", desc: "Our annual Sustainability Report details our environmental, social and governance performance and commitments for the future.", img: "/images/Pecan-Energies-Sustainability-Report-01.jpg" },
+  { date: "July 2023", title: "Plan of Development Approved", desc: "The Government of Ghana approves Pecan Energies' Plan of Development for the DWT/CTP block — a landmark milestone for the Pecan field.", img: null },
 ];
 
 export default function MediaPage() {
@@ -60,15 +61,25 @@ export default function MediaPage() {
           <div className="text-[#C9A84C] text-xs uppercase tracking-[0.3em] font-semibold mb-10">Latest News</div>
           <div className="space-y-4">
             {news.map((n, i) => (
-              <div key={i} className="group flex gap-8 p-8 bg-[#0D1525] border border-white/5 hover:border-[#C9A84C]/30 transition-all cursor-pointer">
+              <div key={i} className="group flex gap-6 p-6 bg-[#0D1525] border border-white/5 hover:border-[#C9A84C]/30 transition-all cursor-pointer items-center">
+                {n.img && (
+                  <div className="relative w-24 h-16 shrink-0 overflow-hidden">
+                    <Image src={n.img} alt={n.title} fill className="object-cover" />
+                  </div>
+                )}
+                {!n.img && (
+                  <div className="w-24 h-16 shrink-0 bg-[#0A0F1E] border border-white/5 flex items-center justify-center">
+                    <div className="text-[#C9A84C]/30 text-xs font-bold uppercase">PE</div>
+                  </div>
+                )}
                 <div className="w-28 shrink-0">
                   <div className="text-[#C9A84C] text-xs font-semibold uppercase tracking-wide">{n.date}</div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#C9A84C] transition-colors">{n.title}</h3>
+                  <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#C9A84C] transition-colors">{n.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{n.desc}</p>
                 </div>
-                <ExternalLink className="text-gray-600 group-hover:text-[#C9A84C] transition-colors shrink-0 mt-1" size={18} />
+                <ExternalLink className="text-gray-600 group-hover:text-[#C9A84C] transition-colors shrink-0" size={18} />
               </div>
             ))}
           </div>

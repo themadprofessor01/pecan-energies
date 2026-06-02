@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function About() {
@@ -37,20 +38,28 @@ export default function About() {
             </Link>
           </div>
 
-          <div className="relative">
-            {/* Visual card stack */}
-            <div className="relative h-80 lg:h-96">
-              <div className="absolute top-0 right-0 w-3/4 h-48 bg-gradient-to-br from-[#1E2A3A] to-[#111827] border border-[#C9A84C]/20 rounded-sm" />
-              <div className="absolute bottom-0 left-0 w-3/4 h-48 bg-gradient-to-br from-[#111827] to-[#1E2A3A] border border-[#C9A84C]/10 rounded-sm" />
-              <div className="absolute inset-8 bg-[#0D1525] border border-[#C9A84C]/30 rounded-sm flex flex-col items-center justify-center p-8 text-center">
-                <div className="text-6xl font-black text-[#C9A84C]/20 mb-2">AFC</div>
-                <div className="text-white font-bold text-lg mb-2">Africa Finance Corporation</div>
-                <div className="text-gray-400 text-sm">Sole Owner of Pecan Energies</div>
-                <div className="mt-4 h-px w-16 bg-[#C9A84C]/40" />
-                <div className="mt-4 text-xs text-gray-500 leading-relaxed">
-                  Pan-African infrastructure investment expertise driving energy development
-                </div>
-              </div>
+          <div className="relative h-[480px]">
+            <div className="absolute top-0 right-0 w-3/4 h-3/4 overflow-hidden border border-[#C9A84C]/20">
+              <Image
+                src="/images/Who-we-are-2.jpg"
+                alt="Pecan Energies team"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[#0A0F1E]/30" />
+            </div>
+            <div className="absolute bottom-0 left-0 w-2/3 h-1/2 overflow-hidden border border-[#C9A84C]/30">
+              <Image
+                src="/images/Who-we-are-4.jpg"
+                alt="Pecan Energies operations"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[#0A0F1E]/20" />
+            </div>
+            <div className="absolute bottom-8 right-0 w-32 bg-[#0A0F1E] border border-[#C9A84C]/40 p-4 text-center">
+              <div className="text-[#C9A84C] font-black text-lg">AFC</div>
+              <div className="text-white text-xs mt-1">Owned</div>
             </div>
           </div>
         </div>

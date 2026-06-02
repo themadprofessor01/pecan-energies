@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 
 const sections = [
@@ -36,14 +37,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#A07830] flex items-center justify-center text-[#0A0F1E] font-bold text-lg">
-                P
-              </div>
-              <div>
-                <div className="text-white font-bold text-lg leading-tight">PECAN</div>
-                <div className="text-[#C9A84C] text-xs tracking-[0.2em] uppercase">Energies</div>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/images/logo-alt.svg"
+                alt="Pecan Energies"
+                width={160}
+                height={40}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building a Pan-African oil and gas operator of choice in offshore deep waters of Ghana. Unlocking prosperity for African communities.

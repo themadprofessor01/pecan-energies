@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Shield, Leaf, Users, BookOpen } from "lucide-react";
 
 const pillars = [
@@ -30,9 +31,26 @@ export default function Sustainability() {
                 Energy Development
               </span>
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-6">
               We produce resources in a safe, efficient and environmentally responsible manner. Our 2024 Sustainability Report reflects our commitment to a just energy transition for Africa — one that delivers prosperity without compromising future generations.
             </p>
+
+            {/* Report thumbnail */}
+            <div className="relative h-40 w-full mb-8 overflow-hidden border border-[#C9A84C]/20">
+              <Image
+                src="/images/Pecan-Energies-Sustainability-Report-01.jpg"
+                alt="2024 Sustainability Report"
+                fill
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#060A14]/80 to-transparent flex items-center px-6">
+                <div>
+                  <div className="text-[#C9A84C] text-xs uppercase tracking-widest font-semibold">2024 Report</div>
+                  <div className="text-white font-bold">Sustainability Report</div>
+                </div>
+              </div>
+            </div>
+
             <Link
               href="/sustainability"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#A07830] to-[#C9A84C] text-[#0A0F1E] font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
